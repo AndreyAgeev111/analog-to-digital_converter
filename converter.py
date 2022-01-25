@@ -30,5 +30,5 @@ def get_plot(voltage, current, m, s):
     plt.legend(loc='lower right', fontsize=14, title="T = 300 K", title_fontsize=13)
     plt.show()
 
-    name = input("Как бы вы хотели сохранить изображение: ")
+    name = input("Как бы вы хотели сохранить изображение: ").strip()
     fig.savefig(f'plots/{name}')
