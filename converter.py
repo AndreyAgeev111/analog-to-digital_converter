@@ -4,8 +4,11 @@ import numpy as np
 
 
 def get_data(d):
-    raw_data = pd.read_csv(f'csv/{d}', delimiter=";")
-    return raw_data["V"], raw_data["I"]
+    try:
+        raw_data = pd.read_csv(f'csv/{d}', delimiter=";")
+        return raw_data["V"], raw_data["I"]
+    except FileNotFoundError:
+        print("Файл не найден")
 
 
 def convert(d, m, s):
